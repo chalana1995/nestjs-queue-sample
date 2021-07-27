@@ -12,8 +12,8 @@ constructor(@InjectQueue('file-operation') private queue: Queue) {}
 
 async deleteFile(fileName: string){
     
-    // localmachine file path
-    let filePath = `C:/Users/PC/Videos/testimage/${fileName}.jpg`;
+    // local machine file path
+    //let filePath =  folder path  eg :-  `C:/Users/PC/testimage/${fileName}.jpg`;
 
     await this.queue.add('delete-file', {
         path: filePath
